@@ -21,6 +21,14 @@ class LinkedList:
         # reference to the head of the list
         self.head = None
 
+    def printNode(self):
+        curr = self.head
+        arr = []
+        while curr:
+            arr.append(curr.value)
+            curr = curr.get_next()
+        print(arr)
+
     def add_to_head(self, value):
         node = Node(value)
         if self.head is not None:
@@ -72,3 +80,18 @@ class LinkedList:
 # setting three to point to 2, and then we kill the connection of two pointing to three, finish the whole stack and its reversed!
 
 #Lingering questions: why does reverse list call for previous? The tests never use it. 
+
+
+list = LinkedList()
+
+list.add_to_head(1)
+list.add_to_head(2)
+list.add_to_head(3)
+list.add_to_head(4)
+list.add_to_head(5)
+
+list.printNode()
+
+list.reverse_list(list.head, None)
+
+list.printNode()
